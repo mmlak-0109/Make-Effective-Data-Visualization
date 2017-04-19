@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Effective Data Visualization: Baseball</title>
+    <link rel="stylesheet" type="text/css" href="baseball.css">
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+    <script src="baseball.js"></script>
+    <script src="jquery-3.2.0.min.js"></script>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="row">
+        <div class="col-12">
+          <h1>Make Effective Data Visualization: Baseball</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The data-set for these vizualizations contain 1,157 baseball players.  The player data includes their handedness (right, left, or both), height (in inches), weight (in pounds), batting average, and home runs.  My goal for these vizualizations are twofold.  First, to give you an overview of the data by showing how the players (grouped by their handedness) compare across their stats.  Second, to show you the relationships between the stats.</p>
+          <p>To navigate between the two sets of vizualizations, click on the "Data Breakdown" and "Data Relationships" buttons.  To navigate between charts in each set, click on the buttons on the right hand side of the charts.</p>
+        </div>
+      </div>
+      <div class="row" id="nav_buttons">
+        <li onclick="show_or_hide('numbers_row')">
+          <span>Data Breakdown</span>
+        </li>
+        <li onclick="show_or_hide('relationships_row')">
+          <span>Data Relationships</span>
+        </li>
+      </div>
+      <div class="row" id="numbers_row">
+        <div class="col-10">
+          <div class="chart" id="the_numbers">
+            <script type="text/javascript">
+              d3.csv("baseball_data.csv", draw_the_numbers);
+            </script>
+          </div>
+        </div>
+        <div class="col-2" id="numbers_buttons"></div>
+      </div>
+      <div class="row" id="relationships_row">
+        <div class="col-10">
+          <div class="chart" id="relationships">
+            <script type="text/javascript">
+              d3.csv("baseball_data.csv", draw_relationships);
+            </script>
+          </div>
+        </div>
+        <div class="col-2" id="relationships_buttons"></div>
+      </div>
+    </div>
+  </body>
+</html>
