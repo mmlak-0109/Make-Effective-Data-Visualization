@@ -23,32 +23,34 @@
         </div>
       </div>
       <div class="row" id="nav_buttons">
-        <li onclick="show_or_hide('numbers_row')">
-          <span>Data Breakdown</span>
-        </li>
-        <li onclick="show_or_hide('relationships_row')">
-          <span>Data Relationships</span>
-        </li>
+        <div class="col-2">
+          <li onclick="show_or_hide('numbers_row')">
+            <span>Data Breakdown</span>
+          </li>
+          <li onclick="show_or_hide('relationships_row')">
+            <span>Data Relationships</span>
+          </li>
+        </div>
       </div>
       <div class="row" id="numbers_row">
-        <div class="col-10">
+        <div class="col-9">
           <div class="chart" id="the_numbers">
             <script type="text/javascript">
               d3.csv("baseball_data.csv", draw_the_numbers);
             </script>
           </div>
         </div>
-        <div class="col-2" id="numbers_buttons"></div>
+        <div class="col-3" id="numbers_buttons"></div>
       </div>
       <div class="row" id="relationships_row">
-        <div class="col-10">
+        <div class="col-9">
           <div class="chart" id="relationships">
             <script type="text/javascript">
               d3.csv("baseball_data.csv", draw_relationships);
             </script>
           </div>
         </div>
-        <div class="col-2" id="relationships_buttons"></div>
+        <div class="col-3" id="relationships_buttons"></div>
       </div>
     </div>
   </body>

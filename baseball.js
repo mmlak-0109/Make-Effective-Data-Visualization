@@ -6,12 +6,12 @@ function show_or_hide ( id ) {
             current = 0;
         }
         else{
-            document.getElementById ( id ).style.display = "inline-flex";
+            document.getElementById ( id ).style.display = "block";
             current = id;
         }
     }
     else { //if nothing is displayed
-        document.getElementById ( id ).style.display = "inline-flex";
+        document.getElementById ( id ).style.display = "block";
         current = id;
     }
 };
@@ -21,7 +21,7 @@ function draw_the_numbers(data) {
     var svg = d3.select("#the_numbers")
         .append("svg")
         .attr("width", "100%")
-        .attr("height", "680px");
+        .attr("height", "635px");
 
     //Define chart type (y-axis type) for the initial visualization
     var chartType = "Total Handedness";
@@ -111,7 +111,7 @@ function draw_relationships(data) {
     var svg = d3.select("#relationships")
         .append("svg")
         .attr("width", "100%")
-        .attr("height", "680px");
+        .attr("height", "635px");
 
     //Define chart type (y-axis type) for the initial visualization
     var chartType = "Homeruns - Batting Average";
@@ -119,7 +119,7 @@ function draw_relationships(data) {
     function chartUpdate(chartType) {
 
         var chart = new dimple.chart(svg, data);
-        chart.addLegend(700, 40, "top")
+        chart.addLegend(150, 40, "top")
 
         //Define y-axis scales and title that update when chart is updated by clicking the button
         if(chartType == "Homeruns - Batting Average") {
@@ -166,7 +166,7 @@ function draw_relationships(data) {
             var series = chart.addSeries(["name", "handedness"], dimple.plot.bubble);
         }
 
-        chart.draw(3000);
+        chart.draw(1000);
     }
 
         //Call chart update function for the first plot using "Percentage"
@@ -192,13 +192,13 @@ function draw_relationships(data) {
         d3.select(".stat_buttons")
           .selectAll("div")
           .transition()
-          .duration(3000)
+          .duration(1000)
           .style("color", "black")
           .style("background", "rgb(251, 201, 127)");
 
         d3.select(this)
           .transition()
-          .duration(3000)
+          .duration(1000)
           .style("background", "lightBlue")
           .style("color", "white");
         svg.selectAll("*").remove();
