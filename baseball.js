@@ -1,17 +1,17 @@
 current = "numbers_row"; // div with id="numbers_row" is currently diplayed
-function show_or_hide ( id ) {
-    if ( current ) { //if something is displayed
-        document.getElementById ( current ).style.display = "none";
-        if ( current == id ) { //if <div> is already diplayed
+function show_or_hide (id) {
+    if (current) { //if something is displayed
+        document.getElementById (current).style.display = "none";
+        if (current == id) { //if <div> is already diplayed
             current = 0;
         }
         else{
-            document.getElementById ( id ).style.display = "block";
+            document.getElementById (id).style.display = "block";
             current = id;
         }
     }
     else { //if nothing is displayed
-        document.getElementById ( id ).style.display = "block";
+        document.getElementById (id).style.display = "block";
         current = id;
     }
 };
@@ -205,4 +205,6 @@ function draw_relationships(data) {
         chartUpdate(d);
     })
 
+    //Hide the rendered chart by setting style.display = "none"
+    document.getElementById ("relationships_row").style.display = "none";
 };
