@@ -7,6 +7,13 @@
     -ms-box-sizing: border-box;
     box-sizing: border-box;
 }
+html {
+  background: url(baseball-stadium.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .grid {
     margin: 0 auto;
     max-width: 1600px;
@@ -58,10 +65,6 @@
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-}
-body {
-    background-image: url(baseball-stadium.jpg);
-    background-size: 100% 100%;
 }
 h1 {
     text-align: center;
