@@ -31,7 +31,7 @@ The data-set for these visualizations contain 1,157 baseball players.  The playe
 ## Feedback
 
 ### Feedback #1
-The first person to provide me feedback was Myles (a very helpful forum mentor).  He replied to my post asking for feedback in the forums.  He gave me three suggestions for improving me my visualization.  
+The first person to provide me feedback was Myles (an always very helpful forum mentor).  He replied to [my post asking for feedback in the forums](https://discussions.udacity.com/t/p6-feedback-request-baseball-data-visualization/241328/2?u=mmlak_0109).  He gave me three suggestions for improving me my visualization.  
 
 1. He pointed out tome that on some browsers my background isn't full screen, and he provided a picture showing me proof.  He then provided me a link to a website that had a tutorial on CSS code that would help to resolve the issue.  The link proved to be very helpful, and I was able to fix the problem.
 
@@ -43,3 +43,4 @@ The first person to provide me feedback was Myles (a very helpful forum mentor).
 3. His final response was about dimple's default colors stating, "This is personal preference, but I don't think that dimple's default colors have enough contrast. You can easily change them."  He then provided me with two links.  One showed how to assign colors myself, and the other one showed how to change dimple's default color's.  I ended up not implementing this suggestion, as I felt the default colors provided enough contrast.
 
 ### Feedback #2
+The second person to provide me feedback was Joey, who is a LinkedIn connection and recent graduate of Udaity's Data Analyst Nanodegree Program.
