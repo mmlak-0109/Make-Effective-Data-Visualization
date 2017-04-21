@@ -43,4 +43,43 @@ The first person to provide me feedback was Myles (an always very helpful forum 
 3. His final response was about dimple's default colors stating, "This is personal preference, but I don't think that dimple's default colors have enough contrast. You can easily change them."  He then provided me with two links.  One showed how to assign colors myself, and the other one showed how to change dimple's default color's.  I ended up not implementing this suggestion, as I felt the default colors provided enough contrast.
 
 ### Feedback #2
-The second person to provide me feedback was Joey, who is a LinkedIn connection and recent graduate of Udaity's Data Analyst Nanodegree Program.
+The second person to provide me feedback was Joey, who is a LinkedIn connection and recent graduate of Udaity's Data Analyst Nanodegree Program.  Here is what he pointed out to me as fixes.
+
+1. First he said, "I found a bug that the buttons on right side of the "Data Relationships" page keep being highlighted when I clicked on another other one."  I told him that I had noticed that as well, but that I hadn't been able to find the problem yet.  He actually found the bug in my cod for me and suggested a fix that might work.  His suggested fix didn't work, but it was almost what I needed.  Thanks to his suggestion I was able to find the right fix and could solve the problem.
+
+With Matt's visualized data, I easily got the following information.
+
+With data breakdown page
+1. I got the majority is right handed players.
+2. Left handed players perform home run most. And right handed players perform least
+3. left hand and both handed players have better batting rate than right handed players 
+4. There is almost no differences among the players in height and weight.
+
+With relationships
+1. The players with low batting rate perform less home run. But it becomes no relationship when batting rate is greater than 0.25
+2. Height-batting average and weight-batting show that the batting rate between 0.2 to 0.3 is majority.
+3. The distributions of Height-homerun and weight-homerun are like a normal distribution, which make sense that both height and weight have weak relationships with home run
+
+For the design, I like the background that matches the topic of data and it is not a complicated picture so that my view is not interrupted by. The introduction at top gives me the basic information of the data. And it locates at a good position so that I can easily review the data with the basic information. Besides, the colors are also well selected. I feel comfortable when I am observing the data.
+
+The follows are points can be improved 
+1. The dash line is not clear because the dots are so crowned. Adding the background color to the dash line may be better
+2. The loading of relationship page is a little bit heavy
+3. The number of x axis of weight is too closed on weight-homerun plot. 
+
+### Feedback #3
+The final person to give me feedback was my wife.  Because the first two people have taken the same course as me, they are familiar with the dataset I am using and the visualization techniques being implimented.  As a result, I felt like getting feedback from someone who is unfomiliar with these things would be benificial, allowing me to get feedback from a much different perspective than the first two people.  The feedback that she gave me centered more on problems she saw in the display of the visualization.
+
+1. First she gave 
+
+My Wife's Feedback
+
+What are some improvements you think I can make?
+
+- Change the color of the bar graph
+- Pop up info box is a little small
+- Make chart labels bigger and add the units of measure into the labels.
+- Colors for the bubbles don’t have enough contrast.  Should change them.
+- Angle the numbers on the x-axis for easy reading
+- Find a way to make the data points less crowded in the bubble graphs.
+- Switch x and y axis for “Height-Weight” graph.
