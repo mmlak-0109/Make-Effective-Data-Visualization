@@ -23,14 +23,14 @@ function draw_the_numbers(data) {
         .attr("width", "100%")
         .attr("height", "635px");
 
-    //Define chart type (y-axis type) for the initial visualization
+    //Define chart type for the initial visualization
     var chartType = "Total Handedness";
 
     function chartUpdate(chartType) {
 
         var chart = new dimple.chart(svg, data);
 
-        //Define x-axis variable, title and bar-chart order
+        //Define x-axis variable and title
         var x = chart.addCategoryAxis("x", "handedness");
         x.title = "Handedness";
 
@@ -64,10 +64,10 @@ function draw_the_numbers(data) {
         chart.draw(1000);
     }
 
-    //Call chart update function for the first plot using "Percentage"
+    //Call chart update function for the first plot using "Total Handedness"
     chartUpdate(chartType);
 
-    //Define y-axis scale options for buttons
+    //Define options for buttons
     var stat = ["Total Handedness", "Average Homeruns", "Average Batting Average", "Average Height", "Average Weight"];
 
     //Define buttons
@@ -110,7 +110,7 @@ function draw_relationships(data) {
         .attr("width", "100%")
         .attr("height", "635px");
 
-    //Define chart type (y-axis type) for the initial visualization
+    //Define chart type for the initial visualization
     var chartType = "Homeruns - Batting Average";
 
     function chartUpdate(chartType) {
@@ -118,9 +118,9 @@ function draw_relationships(data) {
         var chart = new dimple.chart(svg, data);
         chart.addLegend(150, 40, "top");
 
-        //Define y-axis scales and title that update when chart is updated by clicking the button
+        //Define x-axis and y-axis variables, scales and titles that update when chart is updated by clicking the button
         if (chartType === "Homeruns - Batting Average") {
-            //Define x-axis variable, title and bar-chart order
+            //Define  title and bar-chart order
             var x = chart.addMeasureAxis("x", "HR");
             x.title = "Homeruns";
             var y = chart.addMeasureAxis("y", "avg");
@@ -161,10 +161,10 @@ function draw_relationships(data) {
         chart.draw(1000);
     }
 
-        //Call chart update function for the first plot using "Percentage"
+        //Call chart update function for the first plot using "Homeruns - Batting Average"
         chartUpdate(chartType);
 
-    //Define y-axis scale options for buttons
+    //Define options for buttons
     var stat = ["Homeruns - Batting Average", "Height - Batting Average", "Weight - Batting Average", "Height - Homeruns", "Weight - Homeruns", "Height - Weight"];
 
     //Define buttons
