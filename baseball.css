@@ -87,7 +87,15 @@ li {
     width: 100%;
     height: 100%;
 }
-.stat_buttons div {
+.nb_stat_buttons div {
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 2px solid rgb(33, 68, 72);
+    background-color: rgb(251, 201, 127);
+    cursor: pointer;
+    text-align: center;
+}
+.rb_stat_buttons div {
     padding: 3px;
     margin-bottom: 10px;
     border: 2px solid rgb(33, 68, 72);
