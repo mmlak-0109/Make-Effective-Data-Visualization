@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,35 +19,41 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <p>The data-set for these visualizations contain 1,157 baseball players.  The player data includes their handedness (right, left, or both), height (in inches), weight (in pounds), batting average, and home runs.  My goal for these visualizations are twofold.  First, to give you an overview of the data by showing how the players (grouped by their handedness) compare across their stats.  Second, to show you the relationships between the stats.</p>
-          <p>To navigate between the two sets of visualizations, click on the "Data Breakdown" and "Data Relationships" buttons.  To navigate between the charts in each set, click on the buttons connected to the charts.</p>
+          <p>The data-set for these visualizations contain 1,157 baseball players.  The player data includes their handedness (right, left, or both), height (in inches), weight (in pounds), batting average, and home runs.  My goal for these visualizations is twofold.  First, to show how the players (grouped by their handedness) compare across their average performance stats.  Second, to show you the relationships between players (grouped by their height and weight) compare across their average performance stats.</p>
+          <p>To navigate between the two sets of visualizations, click on the "Average Performance Stats by Handedness" and "Average Performance Stats by Height/Weight" buttons.  To navigate between the charts in each set, click on the buttons connected to the charts.</p>
         </div>
       </div>
       <div class="row" id="nav_buttons">
-        <div class="col-2">
-          <button class="button" onclick="show_or_hide('numbers_row')">Data Breakdown</button>
-          <button class="button" onclick="show_or_hide('relationships_row')">Data Relationships</button>
+        <div class="col-3">
+          <button class="button" onclick="show_or_hide('numbers_row')">Average Performance Stats by Handedness</button>
+          <button class="button" onclick="show_or_hide('relationships_row')">Average Performance Stats by Height/Weight</button>
         </div>
       </div>
       <div class="row" id="numbers_row">
-        <div class="col-9">
+        <div class="col-10">
           <div class="chart" id="the_numbers">
             <script type="text/javascript">
               d3.csv("baseball_data.csv", draw_the_numbers);
             </script>
           </div>
         </div>
-        <div class="col-3" id="numbers_buttons"></div>
+        <div class="col-2" id="numbers_buttons">
+          <h3>Findings:</h3>
+          <p>Here it can be seen that even though right handers have the most players by far (more than left handers and switch hitters combined), right handers only came in second in home runs and third in batting average.  In addition, while handedness did provide an advantage in home runs (with left handers having 13 more on average than right handers and 24 more than switch hitters), handedness didn't provide a significant advantage for batting average.</p>
+        </div>
       </div>
       <div class="row" id="relationships_row">
-        <div class="col-9">
+        <div class="col-10">
           <div class="chart" id="relationships">
             <script type="text/javascript">
               d3.csv("baseball_data.csv", draw_relationships);
             </script>
           </div>
         </div>
-        <div class="col-3" id="relationships_buttons"></div>
+        <div class="col-2" id="relationships_buttons">
+          <h3>Findings:</h3>
+          <p>Here it can be seen that while there is an overall negative relationship between batting average and height, there is not a clear relationship between batting average and weight (however, batting average does seem to fluctuate more as weight increases).  In addition, there is not a clear relationship between home runs and height nor home runs and weight.</p>
+        </div>
       </div>
     </div>
   </body>
