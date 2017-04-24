@@ -8,9 +8,10 @@ By the end of this course and project, I will have learned how to do the followi
 - Communicate a story or finding to an appropriate audience using interactive visualizations
 - Undergo the iterative process of creating a visualization, and build interactive visualizations with dimple.js or d3.js.
 
-The current draft of my visualization can be found here: https://bl.ocks.org/mmlak-0109/3bc60562b828c6f5fef58b97173330bf
+The first draft of my visualization can be found here: https://bl.ocks.org/mmlak-0109/3bc60562b828c6f5fef58b97173330bf
+The current draft can be found here: https://bl.ocks.org/mmlak-0109/dc7319d8c4a9df9cdcf393b4c6ada4e4
 
-Below is a full description of the project.  It includes a summary or the dataset, a discussion on my design decisions, and three examples of feedback I recieved on the project.
+Below is a full description of the project.  It includes a summary or the dataset, a discussion on my design decisions, and three examples of feedback I received on the project.
 
 Enjoy!
 
@@ -18,11 +19,13 @@ Enjoy!
 
 ## Summary
 
-The data-set for these visualizations contain 1,157 baseball players.  The player data includes their handedness (right, left, or both), height (in inches), weight (in pounds), batting average, and home runs.  My goal for these visualizations are twofold.  First, to give you an overview of the data by showing how the players (grouped by their handedness) compare across their stats.  Second, to show you the relationships between the stats.
+The data-set for these visualizations contains 1,157 baseball players.  The player data includes their handedness (right, left, or both), height (in inches), weight (in pounds), batting average, and home runs.  My goal for these visualizations is twofold.  First, to show how the players (grouped by their handedness) compare across their average performance stats.  Second, to show you the relationships between players (grouped by their height and weight) compare across their average performance stats.
 
 ## Design
 
-I began my exploration of the data initially in a spreadsheet, but I made my initial plots using dimple.  I began by making one or two satterplots and bar-graphs, but I pretty quickly went ahead and made all the plots I could think of.  After getting all of the charts made individually, I decided I wanted to break the data into two different sections.
+I began my exploration of the data initially in a spreadsheet, but I made my initial plots using dimple.  I began by making one or two scatter plots and bar graphs, but I pretty quickly went ahead and made all the plots I could think of.  After getting all of the charts made individually, I decided I wanted to break the data into two different sections, highlighting different relationships in each section.  From this point on, however, I focused mainly on the technical side of my visualizations, putting off making my graphs explanatory until later.  It was at this point in the development of my visualizations that I asked for feedback from three people.  I adjusted my plots to incorporate almost all of the points of improvement brought up in the feedback, and then, thanks to a reminder to make sure my visualizations tell a story, I refocused my plots and found some key points to highlight.
+
+In the "Average Performance Stats by Handedness" set of plots, I chose bar graphs due to the variables being categorical.  For the "Average Performance Stats by Height/Weight" section, I chose line graphs so that any trends between the performance stats and height and weight could be seen.  I also chose to make the legend interactive to allow viewers to untangle the data by isolating each line.  In addition, while the colors used for the line graphs are dimple's default colors, I chose keep them after playing around with other sets of colors.  I thought that, compared to the other color combinations I tried, they provided the best contrast and had a nice soft tone that is distinct yet easy on the eyes. Finally, my main reason for showing only one set at a time, and one chart within each set at a time, was to keep the visualization page as clean and simple as possible.
 
 ## Feedback
 
@@ -41,12 +44,14 @@ The first person to provide me feedback was Myles (an always very helpful forum 
 
 3. His final response was about dimple's default colors stating, "This is personal preference, but I don't think that dimple's default colors have enough contrast. You can easily change them."  He then provided me with two links.  One showed how to assign colors myself, and the other one showed how to change dimple's default color's.
 
+Later on, while helping me debug the code for my interactive legend, he gave my one last bit of advice as feedback.  He said, "One thing that you will have to think about before you submit is the story that your visualization is telling.  Your visualization will breeze through the technical part of the review process. However, an important part of the process is that your visualization tells a story. (The most commonly used phrase is that visualizations should be 'Explanatory, not Exploratory'). Given the breadth of your visualization, you will have to add some text to your visualization that gives a clear message that your visualization has a central theme/story."  It was at this point that I realized I had almost completely ignored this aspect of my visualizations.  As a result, I refocused my plots to make sure I had clear findings to present.
+
 ### Feedback #2
 The second person to provide me feedback was Joey, who is a LinkedIn connection and recent graduate of Udaity's Data Analyst Nanodegree Program.  Here is what he pointed out to me as fixes.
 
-1. After a quick initial lookthough he said, "I found a bug that the buttons on right side of the "Data Relationships" page keep being highlighted when I clicked on another other one."  I told him that I had noticed that as well, but that I hadn't been able to find the problem yet.  He actually found the bug in my code for me and suggested a fix that might work.  His suggested fix didn't quite work, but thanks to his suggestion I was able to find the right fix and solve the problem.
+1. After a quick initial look-though he said, "I found a bug that the buttons on right side of the "Data Relationships" page keep being highlighted when I clicked on another other one."  I told him that I had noticed that as well, but that I hadn't been able to find the problem yet.  He actually found the bug in my code for me and suggested a fix that might work.  His suggested fix didn't quite work, but thanks to his suggestion I was able to find the right fix and solve the problem.
 
-2. He took the time to have a more thorough lookthrough later on, and he responded with this:
+2. He took the time to have a more thorough look-through later on, and he responded with this:
     
 > With Matt's visualized data, I easily got the following information.
 
@@ -69,13 +74,30 @@ The second person to provide me feedback was Joey, who is a LinkedIn connection 
 > - The numbers on the x axis for weight are too close together on the weight-homerun plot.
 
 ### Feedback #3
-The final person to give me feedback was my wife.  Because the first two people have taken the same course as me, they are familiar with the dataset I am using and the visualization techniques being implimented.  As a result, I felt like getting feedback from someone who is unfomiliar with these things would be benificial, allowing me to get feedback from a much different perspective than the first two people.  The feedback that she gave me centered more on problems she saw in the display of the visualization.
+The final person to give me feedback was my wife.  Because the first two people have taken the same course as me, they are familiar with the dataset I am using and the visualization techniques being implemented.  As a result, I felt like getting feedback from someone who is unfamiliar with these things would be beneficial, allowing me to get feedback from a much different perspective than the first two people.  The feedback that she gave me centered more on problems she saw in the display of the visualization.
 
 1. The main points she gave were these:
     - Changing the color of the bars in the bar graph would make it easier to identify the handedness.
     - The pop-up info box (tool-tip) is a little small.  It was a bit hard to read the information.
-    - The chart labels are a little small.  Also, adding the units of measurment into the labels would make the charts easier to understand.
+    - The chart labels are a little small.  Also, adding the units of measurement into the labels would make the charts easier to understand.
     - The colors for the bubbles don’t have enough contrast (mainly between the red and yellowish/orange color used for Right handedness and Both handedness.
     - The numbers for weight on the x-axis should be angled for easy reading.
     - If possible, finding a way to make the data points less crowded in the bubble graphs would make things easier to understand.
     - For the “Height-Weight” graph, switching the x and y axis made the graph easier to understand.
+    
+### Citations
+
+- http://scripting.com/2014/03/10/opacityInCssBackgroundImages.html#aITTOO
+- https://discussions.udacity.com/t/aggregating-and-manipulating-data-using-dimple-js/184108
+- https://discussions.udacity.com/t/call-to-outside-javascript-file-not-wrorking/239949
+- https://discussions.udacity.com/t/dynamic-buttons-between-cabin-class-and-sex/177482
+- http://bl.ocks.org/Meschreiber/5188e038c6360268a43d2f47dafc8835
+- http://bl.ocks.org/ajaydas/79fdc410599e2cae037af679c921cbb6
+- http://dimplejs.org/index.html
+- https://github.com/PMSI-AlignAlytics/dimple/wiki
+- https://github.com/d3/d3/blob/master/API.md
+- https://www.w3schools.com/html/default.asp
+- https://www.w3schools.com/css/default.asp
+- https://www.w3schools.com/js/default.asp
+- http://stackoverflow.com/questions/17791926/how-to-rotate-x-axis-text-in-dimple-js
+- https://discussions.udacity.com/t/small-problem-with-interactive-legend/242262
