@@ -22,7 +22,7 @@ The data-set for these visualizations contain 1,157 baseball players.  The playe
 
 ## Design
 
-I began my exploration of the data initially in a spreadsheet, but I made my initial plots using dimple.  I began by making a one or two satterplots and bar-graphs, but I pretty quickly went ahead and made all the plots I could think of.  After getting all of the charts made individually, I decided I wanted to break the data into two different sections.
+I began my exploration of the data initially in a spreadsheet, but I made my initial plots using dimple.  I began by making one or two satterplots and bar-graphs, but I pretty quickly went ahead and made all the plots I could think of.  After getting all of the charts made individually, I decided I wanted to break the data into two different sections.
 
 ## Feedback
 
@@ -44,7 +44,7 @@ The first person to provide me feedback was Myles (an always very helpful forum 
 ### Feedback #2
 The second person to provide me feedback was Joey, who is a LinkedIn connection and recent graduate of Udaity's Data Analyst Nanodegree Program.  Here is what he pointed out to me as fixes.
 
-1. After a quick initial lookthough he said, "I found a bug that the buttons on right side of the "Data Relationships" page keep being highlighted when I clicked on another other one."  I told him that I had noticed that as well, but that I hadn't been able to find the problem yet.  He actually found the bug in my cod for me and suggested a fix that might work.  His suggested fix didn't work, but it was almost what I needed.  Thanks to his suggestion I was able to find the right fix and could solve the problem.
+1. After a quick initial lookthough he said, "I found a bug that the buttons on right side of the "Data Relationships" page keep being highlighted when I clicked on another other one."  I told him that I had noticed that as well, but that I hadn't been able to find the problem yet.  He actually found the bug in my code for me and suggested a fix that might work.  His suggested fix didn't quite work, but thanks to his suggestion I was able to find the right fix and solve the problem.
 
 2. He took the time to have a more thorough lookthrough later on, and he responded with this:
     
@@ -73,7 +73,7 @@ The final person to give me feedback was my wife.  Because the first two people 
 
 1. The main points she gave were these:
     - Changing the color of the bars in the bar graph would make it easier to identify the handedness.
-    - The pop-up info box (tool-tip0 is a little small.  It was a bit hard to read the information.
+    - The pop-up info box (tool-tip) is a little small.  It was a bit hard to read the information.
     - The chart labels are a little small.  Also, adding the units of measurment into the labels would make the charts easier to understand.
     - The colors for the bubbles don’t have enough contrast (mainly between the red and yellowish/orange color used for Right handedness and Both handedness.
     - The numbers for weight on the x-axis should be angled for easy reading.
