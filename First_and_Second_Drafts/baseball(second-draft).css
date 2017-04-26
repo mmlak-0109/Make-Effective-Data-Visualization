@@ -19,7 +19,7 @@ html {
 .row {
     width: 100%;
     margin-bottom: 10px;
-    display: inline-block;
+    display: block;
     background-color: white;
     opacity: 0.95;
 }
@@ -81,17 +81,34 @@ p {
     font-family: serif;
     font-size: 16px;
     padding: 3px;
+    background-color: rgb(251, 201, 127);
+    border: 2px solid rgb(33, 68, 72);
     cursor: pointer;
     text-align: center;
     width: 100%;
 }
-#handedness {
-    cursor: not-allowed;
+.button:active {
+    color: white;
+    background-color: lightblue;
 }
 .chart {
-    display: inline-block;
+    display: block;
     width: 100%;
+    height: 100%;
 }
-rect {
+.nb_stat_buttons div {
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 2px solid rgb(33, 68, 72);
+    background-color: rgb(251, 201, 127);
     cursor: pointer;
+    text-align: center;
+}
+.rb_stat_buttons div {
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 2px solid rgb(33, 68, 72);
+    background-color: rgb(251, 201, 127);
+    cursor: pointer;
+    text-align: center;
 }

@@ -1,19 +1,18 @@
-var current_row = "numbers_row"; // div with id="numbers_row" is currently displayed
+var current = "numbers_row"; // div with id="numbers_row" is currently displayed
 function show_or_hide(id) {
     "use strict";
-    document.getElementById(current_row).style.display = "none";
-    document.getElementById(id).style.display = "block";
-    current_row = id;
-}
-
-var current_button = "handedness";
-function disable_button(id) {
-    "use strict";
-    document.getElementById(current_button).disabled = false;
-    document.getElementById(current_button).style.cursor = "pointer";
-    document.getElementById(id).disabled = true;
-    document.getElementById(id).style.cursor = "not-allowed";
-    current_button = id;
+    if (current) { //if something is displayed
+        document.getElementById(current).style.display = "none";
+        if (current === id) { //if <div> is already displayed
+            current = 0;
+        } else {
+            document.getElementById(id).style.display = "block";
+            current = id;
+        }
+    } else { //if nothing is displayed
+        document.getElementById(id).style.display = "block";
+        current = id;
+    }
 }
 
 function draw_the_numbers(data) {
@@ -22,7 +21,7 @@ function draw_the_numbers(data) {
     var svg = d3.select("#the_numbers")
         .append("svg")
         .attr("width", "100%")
-        .attr("height", "625px");
+        .attr("height", "635px");
 
     //Define chart type for the initial visualization
     var chartType = "Total Handedness";
@@ -32,30 +31,30 @@ function draw_the_numbers(data) {
         var chart = new dimple.chart(svg, data);
 
         //Define x-axis variable and title
-        var x = chart.addCategoryAxis("x", "Handedness");
-        x.addOrderRule(["Right", "Left", "Both"]);
+        var x = chart.addCategoryAxis("x", "handedness");
+        x.addOrderRule(["R", "L", "B"]);
         x.title = "Handedness";
         x.fontSize = "14px";
 
         //Define y-axis scales and title that update when chart is updated by clicking the button
         if (chartType === "Total Handedness") {
-            var y = chart.addMeasureAxis("y", "Name");
+            var y = chart.addMeasureAxis("y", "name");
             y.title = "Total";
             y.fontSize = "14px";
-            var series = chart.addSeries("Handedness", dimple.plot.bar);
+            var series = chart.addSeries(null, dimple.plot.bar);
             series.tooltipFontSize = "14px";
-        } else if (chartType === "Average Home Runs") {
-            var y = chart.addMeasureAxis("y", "Home Runs");
-            y.title = "Average Home Runs";
+        } else if (chartType === "Average Homeruns") {
+            var y = chart.addMeasureAxis("y", "HR");
+            y.title = "Average Homeruns";
             y.fontSize = "14px";
-            var series = chart.addSeries("Handedness", dimple.plot.bar);
+            var series = chart.addSeries(null, dimple.plot.bar);
             series.aggregate = dimple.aggregateMethod.avg;
             series.tooltipFontSize = "14px";
         } else if (chartType === "Average Batting Average") {
-            var y = chart.addMeasureAxis("y", "Average");
+            var y = chart.addMeasureAxis("y", "avg");
             y.title = "Average Batting Average";
             y.fontSize = "14px";
-            var series = chart.addSeries("Handedness", dimple.plot.bar);
+            var series = chart.addSeries(null, dimple.plot.bar);
             series.aggregate = dimple.aggregateMethod.avg;
             series.tooltipFontSize = "14px";
         }
@@ -63,46 +62,41 @@ function draw_the_numbers(data) {
         chart.draw(1000);
     }
 
+    //Call chart update function for the first plot using "Total Handedness"
+    chartUpdate(chartType);
+
     //Define options for buttons
-    var stat = ["Total Handedness", "Average Home Runs", "Average Batting Average"];
+    var stat = ["Total Handedness", "Average Homeruns", "Average Batting Average"];
 
     //Define buttons
     var buttons = d3.select("#numbers_buttons")
+        .append("div")
+        .attr("class", "nb_stat_buttons")
         .selectAll("div")
         .data(stat)
         .enter()
-        .append("button")
-        .attr("class", "button")
+        .append("div")
         .text(function (d) {
             return d;
         });
 
     //Define button click behavior and chart update sequence by first removing the previous plot and then updating with the new plot
     buttons.on("click", function (d) {
-        d3.select("#numbers_buttons")
-            .selectAll("button")
+        d3.select(".nb_stat_buttons")
+            .selectAll("div")
             .transition()
             .duration(1000)
-            .attr("disabled", null)
-            .style("cursor", "pointer");
+            .style("color", "black")
+            .style("background", "rgb(251, 201, 127)");
 
         d3.select(this)
             .transition()
             .duration(1000)
-            .attr("disabled", "true")
-            .style("cursor", "not-allowed");
+            .style("background", "lightBlue")
+            .style("color", "white");
         svg.selectAll("*").remove();
         chartUpdate(d);
     });
-
-    //Call chart update function for the first plot using "Total Handedness"
-    chartUpdate(chartType);
-
-    //Disable "Total Handedness" button
-    d3.select("#numbers_buttons")
-        .select("button")
-        .attr("disabled", "true")
-        .style("cursor", "not-allowed");
 }
 
 function draw_relationships(data) {
@@ -111,7 +105,7 @@ function draw_relationships(data) {
     var svg = d3.select("#relationships")
         .append("svg")
         .attr("width", "100%")
-        .attr("height", "625px");
+        .attr("height", "635px");
 
     //Define chart type for the initial visualization
     var chartType = "Average Batting Average - Height";
@@ -124,51 +118,51 @@ function draw_relationships(data) {
 
         //Define x-axis and y-axis variables, scales and titles that update when chart is updated by clicking the button
         if (chartType === "Average Batting Average - Height") {
-            var x = chart.addCategoryAxis("x", "Height");
+            var x = chart.addCategoryAxis("x", "height");
             x.title = "Height (inches)";
             x.fontSize = "14px";
-            var y = chart.addMeasureAxis("y", "Average");
-            y.title = "Average Batting Average";
+            var y = chart.addMeasureAxis("y", "avg");
+            y.title = "Batting Average";
             y.fontSize = "14px";
         } else if (chartType === "Average Batting Average - Weight") {
-            var x = chart.addCategoryAxis("x", "Weight");
+            var x = chart.addCategoryAxis("x", "weight");
             x.title = "Weight (pounds)";
             x.fontSize = "12px";
-            var y = chart.addMeasureAxis("y", "Average");
-            y.title = "Average Batting Average";
+            var y = chart.addMeasureAxis("y", "avg");
+            y.title = "Batting Average";
             y.fontSize = "12px";
-        } else if (chartType === "Average Home Runs - Height") {
-            var x = chart.addCategoryAxis("x", "Height");
+        } else if (chartType === "Average Homeruns - Height") {
+            var x = chart.addCategoryAxis("x", "height");
             x.title = "Height (inches)";
             x.fontSize = "14px";
-            var y = chart.addMeasureAxis("y", "Home Runs");
-            y.title = "Average Home Runs";
+            var y = chart.addMeasureAxis("y", "HR");
+            y.title = "Homeruns";
             y.fontSize = "14px";
-        } else if (chartType === "Average Home Runs - Weight") {
-            var x = chart.addCategoryAxis("x", "Weight");
+        } else if (chartType === "Average Homeruns - Weight") {
+            var x = chart.addCategoryAxis("x", "weight");
             x.title = "Weight (pounds)";
             x.fontSize = "12px";
-            var y = chart.addMeasureAxis("y", "Home Runs");
-            y.title = "Average Home Runs";
+            var y = chart.addMeasureAxis("y", "HR");
+            y.title = "Homeruns";
             y.fontSize = "12px";
         }
 
-        var series = chart.addSeries("Handedness", dimple.plot.line);
+        var series = chart.addSeries("handedness", dimple.plot.line);
         series.lineMarkers = true;
         series.aggregate = dimple.aggregateMethod.avg;
         series.tooltipFontSize = "14px";
 
-        legend.getEntries = function () {
-            var orderedValues = ["Right", "Left", "Both"];
+        legend._getEntries = function() {
+            var orderedValues = ["R", "L","B"];
             var entries = [];
-            orderedValues.forEach(function (v) {
+            orderedValues.forEach(function(v) {
                 entries.push({
-                    key: v,
-                    fill: chart.getColor(v).fill,
-                    stroke: chart.getColor(v).stroke,
-                    opacity: chart.getColor(v).opacity,
-                    series: [series],
-                    aggField: [v]
+                    key : v,
+                    fill : chart.getColor(v).fill,
+                    stroke : chart.getColor(v).stroke,
+                    opacity : chart.getColor(v).opacity,
+                    series : [series],
+                    aggField : [v]
                 });
             }, this);
             return entries;
@@ -178,7 +172,7 @@ function draw_relationships(data) {
         x.shapes.selectAll("text").attr("transform", function (d) {
             if (chartType === "Average Batting Average - Weight") {
                 return d3.select(this).attr("transform") + "translate(0, 10) rotate(-45)";
-            } else if (chartType === "Average Home Runs - Weight") {
+            } else if (chartType === "Average Homeruns - Weight") {
                 return d3.select(this).attr("transform") + "translate(0, 10) rotate(-45)";
             }
         });
@@ -193,7 +187,7 @@ function draw_relationships(data) {
         // object to split it onto 2 lines.  This technique works with any
         // number of lines, it isn't dimple specific.
         svg.selectAll("title_text")
-            .data(["Click legend to show/hide Handedness:"])
+            .data(["Click legend to show/hide handedness:"])
             .enter()
             .append("text")
             .attr("x", 100)
@@ -208,7 +202,7 @@ function draw_relationships(data) {
             });
 
         // Get a unique list of Owner values to use when filtering
-        var filterValues = dimple.getUniqueValues(data, "Handedness");
+        var filterValues = dimple.getUniqueValues(data, "handedness");
         // Get all the rectangles from our now orphaned legend
         legend.shapes.selectAll("rect")
             // Add a click event to each rectangle
@@ -234,60 +228,55 @@ function draw_relationships(data) {
                 // Update the filters
                 filterValues = newFilters;
                 // Filter the data
-                chart.data = dimple.filterData(data, "Handedness", filterValues);
+                chart.data = dimple.filterData(data, "handedness", filterValues);
                 // Passing a duration parameter makes the chart animate. Without
                 // it there is no transition
                 chart.draw(1000);
                 x.shapes.selectAll("text").attr("transform", function (d) {
                     if (chartType === "Average Batting Average - Weight") {
                         return d3.select(this).attr("transform") + "translate(0, 10) rotate(-45)";
-                    } else if (chartType === "Average Home Runs - Weight") {
+                    } else if (chartType === "Average Homeruns - Weight") {
                         return d3.select(this).attr("transform") + "translate(0, 10) rotate(-45)";
                     }
                 });
             });
     }
 
+    //Call chart update function for the first plot using "Homeruns - Batting Average"
+    chartUpdate(chartType);
+
     //Define options for buttons
-    var stat = ["Average Batting Average - Height", "Average Batting Average - Weight", "Average Home Runs - Height", "Average Home Runs - Weight"];
+    var stat = ["Average Batting Average - Height", "Average Batting Average - Weight", "Average Homeruns - Height", "Average Homeruns - Weight"];
 
     //Define buttons
     var buttons = d3.select("#relationships_buttons")
+        .append("div")
+        .attr("class", "rb_stat_buttons")
         .selectAll("div")
         .data(stat)
         .enter()
-        .append("button")
-        .attr("class", "button")
+        .append("div")
         .text(function (d) {
             return d;
         });
 
     //Define button click behavior and chart update sequence by first removing the previous plot and then updating with the new plot
     buttons.on("click", function (d) {
-        d3.select("#relationships_buttons")
-            .selectAll("button")
+        d3.select(".rb_stat_buttons")
+            .selectAll("div")
             .transition()
             .duration(1000)
-            .attr("disabled", null)
-            .style("cursor", "pointer");
+            .style("color", "black")
+            .style("background", "rgb(251, 201, 127)");
 
         d3.select(this)
             .transition()
             .duration(1000)
-            .attr("disabled", "true")
-            .style("cursor", "not-allowed");
+            .style("background", "lightBlue")
+            .style("color", "white");
         svg.selectAll("*").remove();
         chartUpdate(d);
     });
-
-    //Call chart update function for the first plot using "Homeruns - Batting Average"
-    chartUpdate(chartType);
-
-    //Disable "Homeruns - Batting Average" button
-    d3.select("#relationships_buttons")
-        .select("button")
-        .attr("disabled", "true")
-        .style("cursor", "not-allowed");
 
     //Hide the rendered chart by setting style.display = "none"
     document.getElementById("relationships_row").style.display = "none";

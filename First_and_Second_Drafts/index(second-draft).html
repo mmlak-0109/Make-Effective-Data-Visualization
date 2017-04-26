@@ -19,14 +19,14 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <p>The data-set for these visualizations contains 1,157 baseball players.  The player data includes their names, handedness (right, left, or both), height (in inches), weight (in pounds), batting average, and home runs.  My goal for these visualizations is twofold.  First, to show how the players (grouped by their handedness) compare across their average performance stats.  Second, to show the relationships between players (grouped by their height and weight) and their average performance stats.</p>
+          <p>The data-set for these visualizations contain 1,157 baseball players.  The player data includes their handedness (right, left, or both), height (in inches), weight (in pounds), batting average, and home runs.  My goal for these visualizations is twofold.  First, to show how the players (grouped by their handedness) compare across their average performance stats.  Second, to show you the relationships between players (grouped by their height and weight) compare across their average performance stats.</p>
           <p>To navigate between the two sets of visualizations, click on the "Average Performance Stats by Handedness" and "Average Performance Stats by Height/Weight" buttons.  To navigate between the charts in each set, click on the buttons connected to the charts.</p>
         </div>
       </div>
       <div class="row" id="nav_buttons">
         <div class="col-3">
-          <button class="button" id="handedness" onclick="show_or_hide('numbers_row'); disable_button('handedness')" disabled>Average Performance Stats by Handedness</button>
-          <button class="button" id="height/weight" onclick="show_or_hide('relationships_row'); disable_button('height/weight')">Average Performance Stats by Height/Weight</button>
+          <button class="button" onclick="show_or_hide('numbers_row')">Average Performance Stats by Handedness</button>
+          <button class="button" onclick="show_or_hide('relationships_row')">Average Performance Stats by Height/Weight</button>
         </div>
       </div>
       <div class="row" id="numbers_row">
