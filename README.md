@@ -9,8 +9,10 @@ By the end of this course and project, I will have learned how to do the followi
 - Undergo the iterative process of creating a visualization, and build interactive visualizations with dimple.js or d3.js.
 
 The first draft of my visualization can be found here: https://bl.ocks.org/mmlak-0109/3bc60562b828c6f5fef58b97173330bf
+
 The second draft can be found here: https://bl.ocks.org/mmlak-0109/dc7319d8c4a9df9cdcf393b4c6ada4e4
-The current draft can be found here: https://bl.ocks.org/mmlak-0109/877da9bba7ef87f4455bb01d077bed31
+
+The current draft can be found here: https://bl.ocks.org/mmlak-0109/877da9bba7ef87f4455bb01d077bed3
 
 Below is a full description of the project.  It includes a summary or the dataset, a discussion on my design decisions, three examples of feedback I received on the project, and feedback from the official reviewer.
 
