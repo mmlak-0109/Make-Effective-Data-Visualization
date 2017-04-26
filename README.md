@@ -9,9 +9,10 @@ By the end of this course and project, I will have learned how to do the followi
 - Undergo the iterative process of creating a visualization, and build interactive visualizations with dimple.js or d3.js.
 
 The first draft of my visualization can be found here: https://bl.ocks.org/mmlak-0109/3bc60562b828c6f5fef58b97173330bf
-The current draft can be found here: https://bl.ocks.org/mmlak-0109/dc7319d8c4a9df9cdcf393b4c6ada4e4
+The second draft can be found here: https://bl.ocks.org/mmlak-0109/dc7319d8c4a9df9cdcf393b4c6ada4e4
+The current draft can be found here: https://bl.ocks.org/mmlak-0109/877da9bba7ef87f4455bb01d077bed31
 
-Below is a full description of the project.  It includes a summary or the dataset, a discussion on my design decisions, and three examples of feedback I received on the project.
+Below is a full description of the project.  It includes a summary or the dataset, a discussion on my design decisions, three examples of feedback I received on the project, and feedback from the official reviewer.
 
 Enjoy!
 
@@ -84,7 +85,19 @@ The final person to give me feedback was my wife.  Because the first two people 
     - The numbers for weight on the x-axis should be angled for easy reading.
     - If possible, finding a way to make the data points less crowded in the bubble graphs would make things easier to understand.
     - For the “Height-Weight” graph, switching the x and y axis made the graph easier to understand.
-    
+
+### Reviewer Feedback
+After submitting my project for an official review, I received the following feedback on some final changes I needed to make to my visualization:
+
+- **Colour coding** - L,R and B are all blue in the bar charts and three different colours in the lines. Could you keep this consistent for both. You're right, you don't need a legend for the bar chart as the bar labels do this for you but you can still apply the colour coding.
+- **Buttons - colour** - along the same note, you've used the same colour scheme (blue and orange) for the buttons which is double/triple encoding. Greyscale often works well for buttons, particularly in your case with the bright background photo.
+- **Buttons - disabled/enabled** - please make sure it is clear to the reader which chart is selected at all times. "Average Performance Stats by Handedness" and "Total Handedness" should be disabled/selected by default. This would also resolve the rendering error above.
+- **L, R, B** - "left", "right", "both" would be so much more accessible?
+- **Tooltips** - along the same lines as above "Average" is so much better than "avg".
+- **Alignment** - it would be great if you could move the chart to the left a little and the findings/buttons to the right. At the moment there is too much space on the left and too little on the right.
+
+The final draft of my visualization has been changed to reflect all of these suggested changes.
+
 ### Citations
 
 - http://scripting.com/2014/03/10/opacityInCssBackgroundImages.html#aITTOO
@@ -101,3 +114,5 @@ The final person to give me feedback was my wife.  Because the first two people 
 - https://www.w3schools.com/js/default.asp
 - http://stackoverflow.com/questions/17791926/how-to-rotate-x-axis-text-in-dimple-js
 - https://discussions.udacity.com/t/small-problem-with-interactive-legend/242262
+- http://stackoverflow.com/questions/2881307/can-i-have-two-javascript-onclick-events-in-one-element
+- http://stackoverflow.com/questions/15322556/how-to-remove-an-attribute-in-d3-js
