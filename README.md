@@ -1,12 +1,12 @@
 # Welcome to my "Make Effective Data Visualization" Project Page!
 
-I will complete this project for Udacity's Data Analyst Nanodegree "Data Visualization" course.
+I completed this project for Udacity's Data Analyst Nanodegree "Data Visualization" course.
 
-By the end of this course and project, I will have learned how to do the following things:
+During this course of this project, I have learned how to do the following things:
 
 - Demonstrate an ability to choose optimal visual elements to encode data and critically assess the effectiveness of a visualization
 - Communicate a story or finding to an appropriate audience using interactive visualizations
-- Undergo the iterative process of creating a visualization, and build interactive visualizations with dimple.js or d3.js.
+- Undergo the iterative process of creating a visualization, and build interactive visualizations with dimple.js and d3.js.
 
 The first draft of my visualization can be found here: https://bl.ocks.org/mmlak-0109/3bc60562b828c6f5fef58b97173330bf
 
@@ -14,7 +14,7 @@ The second draft can be found here: https://bl.ocks.org/mmlak-0109/dc7319d8c4a9d
 
 The current draft can be found here: https://bl.ocks.org/mmlak-0109/877da9bba7ef87f4455bb01d077bed3
 
-Below is a full description of the project.  It includes a summary or the dataset, a discussion on my design decisions, three examples of feedback I received on the project, and feedback from the official reviewer.
+Below is a full description of the project.  It includes a summary of the dataset, a discussion on my design decisions, three examples of feedback I received on the project, and feedback from the official reviewer.
 
 Enjoy!
 
