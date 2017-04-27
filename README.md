@@ -12,7 +12,7 @@ The first draft of my visualization can be found here: https://bl.ocks.org/mmlak
 
 The second draft can be found here: https://bl.ocks.org/mmlak-0109/dc7319d8c4a9df9cdcf393b4c6ada4e4
 
-The current draft can be found here: https://bl.ocks.org/mmlak-0109/877da9bba7ef87f4455bb01d077bed3
+The current draft can be found here: https://bl.ocks.org/mmlak-0109/877da9bba7ef87f4455bb01d077bed31
 
 Below is a full description of the project.  It includes a summary of the dataset, a discussion on my design decisions, three examples of feedback I received on the project, and feedback from the official reviewer.
 
